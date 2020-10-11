@@ -12,6 +12,15 @@ class _ChooseLocationState extends State<ChooseLocation> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    getData();
+  }
+
+  void getData() {
+    Future.delayed(Duration(seconds: 3), (){
+      setState(() {
+        counter+=100;
+      });
+    });
   }
 
   @override
@@ -29,6 +38,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
             setState(() {
               counter++;
             });
+            getData();
           },
           child: Text('Counter is $counter')),
     );
