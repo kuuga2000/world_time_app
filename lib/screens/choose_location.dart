@@ -15,12 +15,16 @@ class _ChooseLocationState extends State<ChooseLocation> {
     getData();
   }
 
-  void getData() {
-    Future.delayed(Duration(seconds: 3), (){
-      setState(() {
-        counter+=100;
-      });
+  void getData() async {
+    String username = await Future.delayed(Duration(seconds: 3), () {
+      return ("Guosongx");
     });
+    String bio = await Future.delayed(Duration(seconds: 2), () {
+      return ("Code Geek");
+    });
+
+    print("$username -- $bio");
+
   }
 
   @override
@@ -38,7 +42,6 @@ class _ChooseLocationState extends State<ChooseLocation> {
             setState(() {
               counter++;
             });
-            getData();
           },
           child: Text('Counter is $counter')),
     );
